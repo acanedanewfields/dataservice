@@ -1,0 +1,329 @@
+{% extends 'base_sufee.html' %} {% block jquery %}
+<script>
+    var endpoint = '/api/data'
+    $.ajax({
+        method: "GET",
+        url: endpoint,
+        success: function (data) {
+            console.log(data)
+        },
+        error: function (error_data) {
+            console.log(error_data)
+        },
+    })
+
+
+
+</script> {% endblock %} {% block content %} {% load static %} {% include './leftnav.html' %}
+<div id="right-panel" class="right-panel">
+    {% include './topnav.html' %}
+
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>Study Plot Information</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active">
+                            <a href="{% url 'dashboard' %}">Dashboard</a>/
+                            <a href="{% url 'fieldmap' %}">FieldMap</a>/
+                            <a href="{% url 'study' %}">Study</a>/Observation</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content mt-3">
+
+        <!-- Crop -->
+
+        <div class="row">
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Crop : </p>
+                </label>
+                <label>Kaura</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">FieldMap : </p>
+                </label>
+                <label>KA-BOR-12m-R2</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Location : </p>
+                </label>
+                <label>BOR</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Area : </p>
+                </label>
+                <label>R2</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Number of Row : </p>
+                </label>
+                <label>52</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Number of Column : </p>
+                </label>
+                <label>5</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Study : </p>
+                </label>
+                <label>AITOUSRUUDUT</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Location : </p>
+                </label>
+                <label>BOR</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Area : </p>
+                </label>
+                <label>R</label>
+            </div>
+            <div class="col-md-6 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Total Entry : </p>
+                </label>
+                <label>50 </label>
+            </div>
+
+        </div>
+
+        <!-- graph-->
+
+        <!-- End Crop-->
+
+        <!-- Table -->
+
+
+
+
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Observation</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="row form-group">
+                                    <div class="col-md-3 col-form-label">
+                                        <label for="selectSm" class=" form-control-label">Variable</label>
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <select name="selectSm" id="SelectLm" class="form-control-sm form-control">
+                                            <option value="0">AITO1</option>
+                                            <option value="1">FYSNR</option>
+                                            <option value="2">AITKS</option>
+                                            <option value="2">HUOM</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 ">
+                                        <label for="selectSm" class=" form-control-label">ORASKASVTAPA</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Plot Id</th>
+                                                <th>Value</th>
+                                                <th>Recording Timestap</th>
+                                                <th>Record By</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2007019</td>
+                                                <td>1</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2007019</td>
+                                                <td>3</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>3</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>3</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>9</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>3</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>5</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>13</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>7</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>1</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>13</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>3</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>3</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>3</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>3</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>9</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>7</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>5</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>3</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>5</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2007020</td>
+                                                <td>3</td>
+                                                <td>2018-10-10 19:35:38.532591+08</td>
+                                                <td>Ville Vallaton</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div id="container3">
+                                                <script src="https://code.highcharts.com/highcharts.src.js"></script>{% include './chart_obs.html' %}
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /# column -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- .animated -->
+
+        <!-- End Table-->
+
+
+    </div>
+
+
+    <!--  -->
+
+</div>
+
+
+
+{% endblock %}

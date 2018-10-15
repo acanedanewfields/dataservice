@@ -1,0 +1,240 @@
+{% extends 'base_sufee.html' %} {% block jquery %}
+<script>
+    var endpoint = '/api/data'
+    $.ajax({
+        method: "GET",
+        url: endpoint,
+        success: function (data) {
+            console.log(data)
+        },
+        error: function (error_data) {
+            console.log(error_data)
+        },
+    })
+
+
+
+</script> {% endblock %} {% block content %} {% load static %} {% include './leftnav.html' %}
+<div id="right-panel" class="right-panel">
+    {% include './topnav.html' %}
+
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>Study Plot Information</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active">
+                            <a href="{% url 'dashboard' %}">Dashboard</a>/
+                            <a href="{% url 'fieldmap' %}">FieldMap</a>/
+                            <a href="{% url 'study' %}">Study</a>/Plot</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content mt-3">
+
+        <!-- Crop -->
+
+        <div class="row">
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Crop : </p>
+                </label>
+                <label>Kaura</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">FieldMap : </p>
+                </label>
+                <label>KA-BOR-12m-R2</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Location : </p>
+                </label>
+                <label>BOR</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Area : </p>
+                </label>
+                <label>R2</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Number of Row : </p>
+                </label>
+                <label>52</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Number of Column : </p>
+                </label>
+                <label>5</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Study : </p>
+                </label>
+                <label>AITOUSRUUDUT</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Location : </p>
+                </label>
+                <label>BOR</label>
+            </div>
+            <div class="col-md-2 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Area : </p>
+                </label>
+                <label>R</label>
+            </div>
+            <div class="col-md-6 col-form-label">
+                <label>
+                    <p class="font-weight-bold">Total Entry : </p>
+                </label>
+                <label>50 </label>
+            </div>
+
+        </div>
+
+        <!-- graph-->
+
+        <!-- End Crop-->
+
+        <!-- Table -->
+
+        <div class="animated fadeIn">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Plot</strong>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-inline">
+                                    <div class="input-group">
+                                        <input type="text" id="search" name="search" placeholder="Search" class="form-control">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Plot Id</th>
+                                            <th>Entry Name</th>
+                                            <th>Entry Code</th>
+                                            <th>Entry No</th>
+                                            <th>Rep No</th>
+                                            <th>Plan No</th>
+                                            <th>Plot Order 1</th>
+                                            <th>Plot Order 2</th>
+                                            <th>Plot Order 3</th>
+                                            <th>Map X</th>
+                                            <th>Map Y</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2007019</td>
+                                            <td>Bor 04033</td>
+                                            <td>14019</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2007020</td>
+                                            <td>Bor 04034</td>
+                                            <td>14020</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>1</td>
+                                            <td>3</td>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td>2007021</td>
+                                            <td>Bor 04035</td>
+                                            <td>14020</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>1</td>
+                                            <td>4</td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- .animated -->
+
+        <!-- End Table-->
+
+
+    </div>
+
+
+    <!--  -->
+
+</div>
+
+<script>
+        (function ($) {
+            "use strict";
+
+            jQuery('#vmap').vectorMap({
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#1de9b6',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: ['#1de9b6', '#03a9f5'],
+                normalizeFunction: 'polynomial'
+            });
+        })(jQuery);
+</script> {% endblock %}
